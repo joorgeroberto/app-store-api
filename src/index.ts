@@ -3,5 +3,7 @@ import { Server } from './server';
 
 const server = new Server();
 
-server.init();
-server.start();
+server
+  .init()
+  .then(() => server.start())
+  .catch(err => console.error(err));
